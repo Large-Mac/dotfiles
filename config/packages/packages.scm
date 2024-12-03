@@ -8,17 +8,19 @@
   '("zoxide"      ;; cd alternative
     "eza"     ;; ls alternative
     "openssh"
+    "kitty"
     "curl"
     "wget"
     "fzf" ;; fuzzy finder
     "bat" ;; cat alternative
     "ripgrep" ;; grep alternative
     "fd" ;; find alternative
-    "htop" ;; htop alternative
+    "btop" ;; htop alternative
     "zathura" ;; document viewer
     "vim" ;; as a backup for nvim and emacs
     "git" ;; version control
-   ;; "firefox" ;; default browser
+    ;;"firefox" ;; default browser
+    "nyxt"
     "librewolf" ;; libre firefox
     "yt-dlp" ;; video downloader
     ;; dotfile manager, choose between chezmoi, gnu stow, and more
@@ -39,15 +41,27 @@
     "podman"	;; rootless and headless containers
     "emacs"	;; The holy editor
     "neovim"	;; The evil editor
-    ;; LSP Support for Emacs
- ;;   "guile-lsp"	;; Guile Scheme
- ;;   "nil"	;; Nix
- ;;   "lua-language-server"	;; Lua
     ))
+
+(define emacs-packages
+  '("xclip"
+    "shellcheck"
+    "cmake"
+    "pandoc"
+    "flameshot"
+    "graphviz"
+    "node"
+    "beets"))
+
+(define virtualization-packages
+  '("qemu"
+    "virt-manager"
+    "libvirt"
+    "bridge-utils"))
 
 (define fonts
   '("font-hack"
-   ;; "font-nerd-fonts"	;; may need to create custom package definition for nerd hack font
+    "font-iosevka"
     ))
 
 (define laptop-packages
@@ -72,7 +86,11 @@
   ;; Core system packages - always installed
   (specifications->manifest
    (append system-packages
-           dev-packages))
+           dev-packages
+           emacs-packages
+           virtualization-packages
+           fonts))
+
   
   ;; Machine specific packages
   (specifications->manifest machine-specific-packages)))
