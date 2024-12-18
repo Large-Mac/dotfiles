@@ -20,7 +20,8 @@
     "vim" ;; as a backup for nvim and emacs
     "git" ;; version control
     ;;"firefox" ;; default browser
-    "nyxt"
+    ;;"nyxt"
+    "qutebrowser"
     "librewolf" ;; libre firefox
     "yt-dlp" ;; video downloader
     ;; dotfile manager, choose between chezmoi, gnu stow, and more
@@ -51,7 +52,17 @@
     "flameshot"
     "graphviz"
     "node"
-    "beets"))
+    "beets"
+    "ispell"
+    "texlive-base" ;; LaTex distrobution
+    "texlive-latex-base"
+    "texlive-amsfonts"
+    "texlive-latex-amsmath"
+    "texlive-latex-preview"
+    "texlive-dvipng"
+    "dvisvgm"
+    ))
+
 
 (define virtualization-packages
   '("qemu"
