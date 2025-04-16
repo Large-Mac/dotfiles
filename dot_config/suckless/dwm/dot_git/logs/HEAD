@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 a025fd987bb7627f51a9e5e2dc834f93cf4f9b61 Large-Mac <bighaodwofad@gmail.com> 1735428749 -0800	commit (initial): currently fixing dmenu not spawning, terminal does spawn
+a025fd987bb7627f51a9e5e2dc834f93cf4f9b61 c3311215e0e9de6b898d1ae049658fe602fa3a48 Large-Mac <bighaodwofad@gmail.com> 1735431883 -0800	commit: fixed dmenu issue
+c3311215e0e9de6b898d1ae049658fe602fa3a48 b5d2fb97c201ebd352796438ac647b0308f273aa Large-Mac <bighaodwofad@gmail.com> 1735454735 -0800	commit: patchless DWM build with pywal and using default bar
+b5d2fb97c201ebd352796438ac647b0308f273aa 44baf8675d39701d867f6d00b5453c62c1b19684 Large-Mac <bighaodwofad@gmail.com> 1735469523 -0800	commit: added jetbrains mono and changed the bar temporarily, before patching
+44baf8675d39701d867f6d00b5453c62c1b19684 2fb0eb7b4bbf9cab6b5fb0dbb0292ce129f92b4a Large-Mac <bighaodwofad@gmail.com> 1735472688 -0800	commit: successfully patched dwm with scratchpads
+2fb0eb7b4bbf9cab6b5fb0dbb0292ce129f92b4a 35834df5e40fa0415dfd72ce1cb3e61d0870f5c7 Large-Mac <bighaodwofad@gmail.com> 1735620465 -0800	commit: changed some scatchpad bindings, changed 6th tag to VI
+35834df5e40fa0415dfd72ce1cb3e61d0870f5c7 f3abb2b44f05bb49f88423bef82591a06e53fb4d Large-Mac <bighaodwofad@gmail.com> 1735621437 -0800	commit: added ncmpcpp to scratchpads
+f3abb2b44f05bb49f88423bef82591a06e53fb4d 63231ef7f2885e99ad28983319e75d0d4a3e1441 Large-Mac <bighaodwofad@gmail.com> 1743720107 -0700	commit: before changing font
+63231ef7f2885e99ad28983319e75d0d4a3e1441 853db8ae6f06e445ef0812c3d1deccbe44da90c0 Large-Mac <bighaodwofad@gmail.com> 1744776433 -0700	commit: added notepead & clickable bar

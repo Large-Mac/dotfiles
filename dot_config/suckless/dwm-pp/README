@@ -1,0 +1,8 @@
+This is my simple version of DWM.
+
+As of writing, this build is completly patchless, although I may incorporate the slsstatus patch in order for dwmblocks to have clickable functionality.
+
+This build uses pywal, so that is the sole dependancy for the build. 
+
+I use devour for the rare times that I need to use the swallow functionality, and I may wirte my own script using xdo.
+

@@ -1,0 +1,13 @@
+This is my simple version of DWM.
+
+Patches Applied:
+
+Slstatus (for clickable dwmblocks)
+scratchpads (multiple scratchpads)
+
+This build uses pywal, so that is the sole dependency for the build. 
+
+I use devour for the rare times that I need to use the swallow functionality, and I may write my own script using xdo.
+
+This also requires permissions to be set to have dwmblocks and dwm compile during startup.
+

@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 a025fd987bb7627f51a9e5e2dc834f93cf4f9b61 Large-Mac <bighaodwofad@gmail.com> 1735428749 -0800	commit (initial): currently fixing dmenu not spawning, terminal does spawn
+a025fd987bb7627f51a9e5e2dc834f93cf4f9b61 c3311215e0e9de6b898d1ae049658fe602fa3a48 Large-Mac <bighaodwofad@gmail.com> 1735431883 -0800	commit: fixed dmenu issue
+c3311215e0e9de6b898d1ae049658fe602fa3a48 b5d2fb97c201ebd352796438ac647b0308f273aa Large-Mac <bighaodwofad@gmail.com> 1735454735 -0800	commit: patchless DWM build with pywal and using default bar

@@ -1,0 +1,54 @@
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# don't put duplicate lines in the history
+HISTCONTROL=ignoredups:ignorespace
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command
+shopt -s checkwinsize
+
+# set a fancy prompt
+PS1='\u@\h:\w\$ '
+
+# enable color support of ls
+if [ -x /usr/bin/dircolors ]; then
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls --color=auto'
+  alias grep='grep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Aliases
+alias update="nix run nixpkgs#home-manager -- switch --flake .#neo"
+alias doom="~/.config/emacs/bin/doom"
+alias yta="yt-dlp -f 'ba' -x --embed-thumbnail --output '%(title)s.%(ext)s' --cookies-from-browser firefox"
+alias ytv="yt-dlp -f 'bestvideo+bestaudio/best' --output '%(title)s.%(ext)s' --cookies-from-browser firefox"
+alias mp="ncmpcpp"
+alias orgtomd="pandoc --from=org --to=gfm --wrap=none"
+# Only usable in system D
+alias logout="loginctl terminate-user $USER"
+
+# PATHS
+export PATH=$HOME/scripts:$PATH
+export PATH=$PATH:/usr/share/texmf-dist
+export FONTCONFIG_PATH="$HOME/.nix-profile/etc/fonts"
+
+# etc
+# update-colors
+wal -n --theme ~/.config/wal/colorschemes/light/tao-yang.json >/dev/null
+
+# enable programmable completion
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+  . /etc/bash_completion
+fi
