@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "Setting wallpaper with feh..."
+feh --bg-fill ~/Pictures/feh
+
+echo "Setting pywal theme..."
+wal --theme ~/.config/wal/colorschemes/light/tao-yang.json
+sed -i 'N;$!P;D' $HOME/.cache/wal/colors-wal-dwm.h
+echo "Recompiling DWM with colors ..."
+(cd $HOME/.config/suckless/dwm && sudo make clean install >/dev/null)
+echo "Restart DWM for new colors! (Mod-Shft-q)"
+echo "Pywal theme applied successfully!"

@@ -1,0 +1,77 @@
+##############################################################################
+# Vim-style key bindings for ncmpcpp
+##############################################################################
+
+# Navigation
+def_key "j"
+    scroll_down
+def_key "k"
+    scroll_up
+def_key "h"
+    previous_column
+def_key "l"
+    next_column
+def_key "ctrl-u"
+    page_up
+def_key "ctrl-d"
+    page_down
+def_key "g"
+    move_home
+def_key "G"
+    move_end
+
+# Playlist manipulation
+def_key "d"
+    delete_playlist_items
+def_key "D"
+    delete_stored_playlist
+def_key "y"
+    save_tag_changes
+def_key "p"
+    add_item_to_playlist
+def_key "u"
+    update_database
+
+# Search
+def_key "/"
+    find_item_forward
+def_key "n"
+    next_found_item
+def_key "N"
+    previous_found_item
+
+# Playback control
+def_key "space"
+    pause
+def_key ">"
+    next
+def_key "<"
+    previous
+def_key "r"
+    toggle_repeat
+def_key "z"
+    toggle_random
+def_key "s"
+    toggle_single
+
+# Volume control
+def_key "+"
+    volume_up
+def_key "-"
+    volume_down
+
+# Visual mode
+def_key "v"
+    select_item
+def_key "V"
+    reverse_selection
+
+# Tabs/Windows
+def_key "tab"
+    next_screen
+def_key "shift-tab"
+    previous_screen
+
+# Other
+def_key "q"
+    quit

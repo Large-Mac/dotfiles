@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Generate colorscheme
+wal -i "$(cat "${HOME}/.cache/wal/wal")" -n -q >/dev/null
+
+# Update ncmpcpp config
+cat ~/.cache/wal/colors-ncmpcpp >~/.config/ncmpcpp/config

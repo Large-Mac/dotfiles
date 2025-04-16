@@ -1,0 +1,21 @@
+0000000000000000000000000000000000000000 5d4da03351c5b2e3042d54eb8165c289e6353a6d Large-Mac <bighaodwofad@gmail.com> 1734504816 -0800	commit (initial): Bare Nix Flake
+5d4da03351c5b2e3042d54eb8165c289e6353a6d 0000000000000000000000000000000000000000 Large-Mac <bighaodwofad@gmail.com> 1734504828 -0800	Branch: renamed refs/heads/master to refs/heads/main
+0000000000000000000000000000000000000000 5d4da03351c5b2e3042d54eb8165c289e6353a6d Large-Mac <bighaodwofad@gmail.com> 1734504828 -0800	Branch: renamed refs/heads/master to refs/heads/main
+5d4da03351c5b2e3042d54eb8165c289e6353a6d ce95371b5964b842676f270848de28cdfb74d1f3 Large-Mac <bighaodwofad@gmail.com> 1734505011 -0800	pull: Fast-forward
+ce95371b5964b842676f270848de28cdfb74d1f3 0e4e9ba5840256c3a56c54930b3316d069a923a1 Large-Mac <bighaodwofad@gmail.com> 1734571294 -0800	commit: adding directories for modular config
+0e4e9ba5840256c3a56c54930b3316d069a923a1 e9f60ee28c7de2b4e7a45c1a5c3676b0ee8d4011 Large-Mac <bighaodwofad@gmail.com> 1734571856 -0800	commit: changed flake to be minimal
+e9f60ee28c7de2b4e7a45c1a5c3676b0ee8d4011 0f8b7c698f4f8219a63d1e921da1e1e0eb379514 Large-Mac <bighaodwofad@gmail.com> 1734578855 -0800	commit: first major flake modularization
+0f8b7c698f4f8219a63d1e921da1e1e0eb379514 55d36e3df8e2959526dd6b219be9c05572672edd Large-Mac <bighaodwofad@gmail.com> 1734579295 -0800	commit: replaced home-info to main flake to fix home-manager issue
+55d36e3df8e2959526dd6b219be9c05572672edd d1b7f71aee79c000ce217a0472678e69a5a5db0c Large-Mac <bighaodwofad@gmail.com> 1734579538 -0800	commit: actually fixed home-manager issue, disregard previous commit
+d1b7f71aee79c000ce217a0472678e69a5a5db0c 80a4051923d52bf74a0ed29d77f25b4fce377a2d Large-Mac <bighaodwofad@gmail.com> 1734581204 -0800	commit: added fonts in packages.nix
+80a4051923d52bf74a0ed29d77f25b4fce377a2d 599383523e5b0bb8e8396de57716fc34b28bedcf Large-Mac <bighaodwofad@gmail.com> 1734584736 -0800	commit: added feh, picom, and picom.nix
+599383523e5b0bb8e8396de57716fc34b28bedcf c67ef8b990191a2ad7c7eb78ef1ac40a2abb828e Large-Mac <bighaodwofad@gmail.com> 1734584901 -0800	commit: added sudo to update alias
+c67ef8b990191a2ad7c7eb78ef1ac40a2abb828e e4439f8f3c5b9cd004d6fe8a68a722b2242e000d Large-Mac <bighaodwofad@gmail.com> 1734585776 -0800	commit: added yt-dlp
+e4439f8f3c5b9cd004d6fe8a68a722b2242e000d 19b84e428d1a77de92cccdb0a5399e56e30a4624 Large-Mac <bighaodwofad@gmail.com> 1734670969 -0800	commit: added nvim module, work needs to be made to either use local config or config directly from github
+19b84e428d1a77de92cccdb0a5399e56e30a4624 99fd009f73f9da8c5bdc9f151367856428191c2f Large-Mac <bighaodwofad@gmail.com> 1734672367 -0800	commit: fixed issues with neovim module
+99fd009f73f9da8c5bdc9f151367856428191c2f cb98447905760b7fe3c73c882071d47f0a9d36b0 Large-Mac <bighaodwofad@gmail.com> 1734673108 -0800	commit: only neovim has config/pkgs varible
+cb98447905760b7fe3c73c882071d47f0a9d36b0 bde4033c70856e09ed768c407c743adff649fb65 Large-Mac <bighaodwofad@gmail.com> 1734764178 -0800	commit: added jetbrains-mono nerd font
+bde4033c70856e09ed768c407c743adff649fb65 5fd264964e889e83554ffe148b7d2cb96e7dd967 Large-Mac <bighaodwofad@gmail.com> 1735114619 -0800	commit: added ytdlp alias in bash
+5fd264964e889e83554ffe148b7d2cb96e7dd967 3c9c728cb405e9f2f57d85bc746ed50d9a16dbd4 Large-Mac <bighaodwofad@gmail.com> 1735114926 -0800	commit: fixed previous commit adding ytdlp aliases
+3c9c728cb405e9f2f57d85bc746ed50d9a16dbd4 6048c96d5bccee800ffc4baeeefbc381d9169337 Large-Mac <bighaodwofad@gmail.com> 1740188909 -0800	commit: backing up old config
+6048c96d5bccee800ffc4baeeefbc381d9169337 a569d0a474437de619da0af830399bdc7ff276a1 Large-Mac <bighaodwofad@gmail.com> 1741811907 -0700	commit: updating tree

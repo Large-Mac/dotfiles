@@ -1,0 +1,24 @@
+
+
+# Use xrender backend
+backend = "xrender";
+vsync = true;
+
+# Basic transparency settings
+opacity-rule = [
+    "85:class_g = 'Alacritty'",
+    "85:class_g = 'kitty'",
+    "85:class_g = 'URxvt'",
+    "85:class_g = 'st-256color'",
+    "85:class_g = 'XTerm'"
+];
+
+# Basic fading
+fading = true;
+fade-delta = 5;
+fade-in-step = 0.03;
+fade-out-step = 0.03;
+
+# No fancy blur or shadows for now
+blur-background = false;
+shadow = false;

@@ -1,0 +1,4 @@
+#!/bin/bash
+for script in ~/.config/wal/postrun.d/*; do
+    [ -x "$script" ] && "$script"
+done

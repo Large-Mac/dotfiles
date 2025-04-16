@@ -1,0 +1,25 @@
+* This is my flake config
+
+** Installation
+
+1. Clone the repo to the desired location
+
+   - git clone https://github.com/Large-Mac/nixpkgs
+
+2. Install Nix Package Manager
+
+   Multi-User Configuration
+
+   (Use if you want nix permanently & want it on root & use system d)
+
+   sh <(curl -L https://nixos.org/nix/install) --daemon
+
+   Single User
+
+   (Use if you either: do NOT use systemD [gnu-sheperd / runit / openrc], want rootless installation, may get rid of it)
+
+   sh <(curl -L https://nixos.org/nix/install) --no-daemon
+
+3. Add user to nix group
+
+4. cd to cloned directory and run:

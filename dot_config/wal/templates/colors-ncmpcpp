@@ -1,0 +1,15 @@
+colors_enabled = yes
+header_window_color = blue
+empty_tag_color = cyan
+volume_color = cyan
+state_line_color = green
+state_flags_color = blue
+main_window_color = cyan
+color1 = white
+color2 = green
+progressbar_color = black
+progressbar_elapsed_color = cyan
+statusbar_color = cyan
+alternative_ui_separator_color = black
+window_border_color = cyan
+active_window_border = red
