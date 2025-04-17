@@ -1,0 +1,50 @@
+return {
+  {
+    "vimwiki/vimwiki",
+    keys = {
+      { "<leader>ww", "<cmd>VimwikiIndex<cr>", desc = "Open VimWiki index" },
+      { "<leader>ws", "<cmd>VimwikiUISelect<cr>", desc = "Select wiki" },
+      { "<leader>wt", "<cmd>VimwikiTable<cr>", desc = "Create table" },
+      { "<leader>w<leader>w", "<cmd>VimwikiMakeDiaryNote<cr>", desc = "Make diary note" },
+      { "<leader>w<leader>t", "<cmd>VimwikiTabMakeDiaryNote<cr>", desc = "Make diary note in new tab" },
+      { "<leader>w<leader>y", "<cmd>VimwikiMakeYesterdayDiaryNote<cr>", desc = "Make yesterday's diary note" },
+      { "<leader>w<leader>m", "<cmd>VimwikiMakeTomorrowDiaryNote<cr>", desc = "Make tomorrow's diary note" },
+      { "<leader>w<leader>i", "<cmd>VimwikiDiaryIndex<cr>", desc = "Open diary index" },
+    },
+    init = function()
+      -- Basic wiki configuration
+      vim.g.vimwiki_list = {
+        {
+          path = "~/vimwiki",
+          syntax = "markdown",
+          ext = ".md",
+          diary_rel_path = "diary/",
+          diary_index = "diary",
+          diary_header = "Diary",
+          auto_diary_index = 1,
+        },
+      }
+
+      -- Enable all VimWiki features
+      vim.g.vimwiki_global_ext = 0 -- Don't treat all .md files as vimwiki
+      vim.g.vimwiki_folding = "expr" -- Enable folding
+      vim.g.vimwiki_hl_headers = 1 -- Enable header highlighting
+      vim.g.vimwiki_hl_cb_checked = 1 -- Highlight completed checkboxes
+      vim.g.vimwiki_markdown_link_ext = 1 -- Add .md to markdown links
+      vim.g.vimwiki_listsyms = " ○◐●✓" -- Custom list symbols
+      vim.g.vimwiki_use_calendar = 1 -- Enable calendar integration
+      vim.g.vimwiki_text_ignore_newline = 0 -- Don't ignore newlines
+      vim.g.vimwiki_list_ignore_newline = 0 -- Don't ignore newlines in lists
+      vim.g.vimwiki_table_auto_fmt = 1 -- Auto-format tables
+      vim.g.vimwiki_table_reduce_last_col = 0 -- Don't reduce last column
+      vim.g.vimwiki_url_maxsave = 15 -- Number of links to save in history
+      vim.g.vimwiki_conceallevel = 2 -- Hide markup
+      vim.g.vimwiki_conceal_pre = 1 -- Conceal preformatted text
+      vim.g.vimwiki_conceal_onechar_markers = 1 -- Conceal single char markers
+      vim.g.vimwiki_auto_chdir = 1 -- Auto change to wiki directory
+    end,
+    dependencies = {
+      "mattn/calendar-vim", -- Optional: for calendar integration
+    },
+  },
+}

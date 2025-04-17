@@ -1,0 +1,11 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "nvim"]
+	url = https://github.com/Large-Mac/nvim.git
+	fetch = +refs/heads/*:refs/remotes/nvim/*
+[branch "main"]
+	remote = nvim
+	merge = refs/heads/main

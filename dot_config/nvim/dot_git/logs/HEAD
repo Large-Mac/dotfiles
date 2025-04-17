@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 a33705c8c4ba4287403c74ce396e9b2c708f4e90 Large-Mac <bighaodwofad@gmail.com> 1734501392 -0800	commit (initial): Base install of Lazyvim
+a33705c8c4ba4287403c74ce396e9b2c708f4e90 0000000000000000000000000000000000000000 Large-Mac <bighaodwofad@gmail.com> 1734501412 -0800	Branch: renamed refs/heads/master to refs/heads/main
+0000000000000000000000000000000000000000 a33705c8c4ba4287403c74ce396e9b2c708f4e90 Large-Mac <bighaodwofad@gmail.com> 1734501412 -0800	Branch: renamed refs/heads/master to refs/heads/main
+a33705c8c4ba4287403c74ce396e9b2c708f4e90 db4a7fe5670a81dacb23decbcd629b20c43318d4 Large-Mac <bighaodwofad@gmail.com> 1744764014 -0700	commit: a mess, but migrated note-taking to emacs

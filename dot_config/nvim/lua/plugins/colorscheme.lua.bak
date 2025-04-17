@@ -1,0 +1,21 @@
+-- lua/plugins/colorscheme.lua
+return {
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      -- Disable the default colorscheme
+      colorscheme = function()
+        -- Do nothing, letting our pywal setup handle it
+      end,
+    },
+  },
+  {
+    "AlphaTechnolog/pywal.nvim",
+    name = "pywal",
+    priority = 1000, -- Load this before other colorschemes
+    config = function()
+      require("pywal").setup()
+      vim.cmd.colorscheme("pywal")
+    end,
+  },
+}

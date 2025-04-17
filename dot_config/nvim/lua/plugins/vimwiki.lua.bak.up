@@ -1,0 +1,55 @@
+return {
+  {
+    "vimwiki/vimwiki",
+    keys = function()
+      return {
+        { "<leader>ww", ":VimwikiIndex<CR>", desc = "Open VimWiki Index" },
+      }
+    end,
+    init = function()
+      -- Set markdown as default syntax
+      vim.g.vimwiki_list = {
+        {
+          path = "~/vimwiki",
+          syntax = "markdown",
+          ext = ".md",
+          links_space_char = "-",
+        },
+      }
+
+      vim.g.vimwiki_ext2syntax = { [".md"] = "markdown" }
+      vim.g.vimwiki_global_ext = 0
+
+      -- Keep VimWiki's link functionality while using markdown
+      vim.g.vimwiki_key_mappings = {
+        all_maps = 1,
+        global = 1,
+        headers = 1,
+        text_objs = 1,
+        table_format = 0,
+        table_mappings = 0,
+        lists = 1,
+        links = 1,
+        html = 0,
+        mouse = 0,
+      }
+
+      -- Force markdown filetype while keeping VimWiki features
+      vim.api.nvim_create_autocmd("BufEnter", {
+        pattern = "*.md",
+        callback = function()
+          if vim.bo.filetype == "vimwiki" then
+            -- Set markdown filetype but keep VimWiki's functionality
+            vim.bo.filetype = "markdown"
+            -- Restore VimWiki's Enter mapping for links
+            vim.api.nvim_buf_set_keymap(0, "n", "<CR>", "<Plug>VimwikiFollowLink", { silent = true })
+          end
+        end,
+      })
+
+      vim.g.vimwiki_folding = ""
+      vim.g.vimwiki_tables_auto_fmt = 0
+      vim.g.vimwiki_markdown_link_default_format = "["
+    end,
+  },
+}
