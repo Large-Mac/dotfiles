@@ -77,6 +77,9 @@
 
 ;;(setq fancy-splash-image "~/Downloads/ohm.png")
 
+;; Change the localleader key to comma
+(setq doom-localleader-key ",")
+
 (custom-set-faces!
   '(org-level-1 :height 1.4 :weight bold :family "Hack")
   '(org-level-2 :height 1.3 :weight semi-bold)
@@ -149,3 +152,46 @@
       (:prefix ("i" . "insert")
        :desc "Screenshot" "s" #'org-download-screenshot
        :desc "Clipboard image" "p" #'org-download-clipboard))
+
+;; Markdown section
+(use-package! markdown-mode
+  :config
+  ;; Create pretty symbols for markdown headings
+  (add-hook! markdown-mode
+    (font-lock-add-keywords
+     nil
+     '(("^\\(#\\) " 1 '(face nil display "◉ "))
+       ("^\\(##\\) " 1 '(face nil display "○ "))
+       ("^\\(###\\) " 1 '(face nil display "✸ "))
+       ("^\\(####\\) " 1 '(face nil display "✿ "))
+       ("^\\(#####\\) " 1 '(face nil display "⚘ "))
+       ("^\\(######\\) " 1 '(face nil display "❀ ")))))
+
+;; Set variable heights for markdown headings
+(custom-set-faces!
+  '(markdown-header-face-1 :height 1.8 :weight bold)
+  '(markdown-header-face-2 :height 1.6 :weight bold)
+  '(markdown-header-face-3 :height 1.4 :weight bold)
+  '(markdown-header-face-4 :height 1.2 :weight bold)
+  '(markdown-header-face-5 :height 1.1 :weight bold)
+  '(markdown-header-face-6 :height 1.0 :weight bold))
+
+;; Enable pretty symbols for various markdown elements
+  (setq markdown-hide-markup t)
+  (setq markdown-fontify-code-blocks-natively t)
+  (setq markdown-header-scaling t)
+
+  ;; Make checkboxes interactive like in org-mode
+  (setq markdown-make-gfm-checkboxes-buttons t)
+
+  ;; Enable math rendering if using +grip flag
+  (setq markdown-enable-math t)
+
+  ;; Enable wiki links
+  (setq markdown-enable-wiki-links t))
+
+;; Ensure code blocks get proper syntax highlighting
+(after! markdown-mode
+  (set-face-attribute 'markdown-code-face nil
+                     :background (doom-color 'bg-alt)
+                     :extend t))
