@@ -51,6 +51,7 @@
 
 (package! tao-theme)
 
+(package! denote)
 
 
 (package! org :recipe

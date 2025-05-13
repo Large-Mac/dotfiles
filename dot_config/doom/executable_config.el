@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'leuven)
+(setq doom-theme 'modus-operandi)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -80,8 +80,10 @@
 ;; Change the localleader key to comma
 (setq doom-localleader-key ",")
 
+(setq doom-font (font-spec :family "Iosevka Comfy Wide" :size 15))
+
 (custom-set-faces!
-  '(org-level-1 :height 1.4 :weight bold :family "Hack")
+  '(org-level-1 :height 1.4 :weight bold :family "Iosevka Comfy Wide")
   '(org-level-2 :height 1.3 :weight semi-bold)
   '(org-level-3 :height 1.2 :weight medium)
   '(org-level-4 :height 1.1 :weight normal))
@@ -156,42 +158,74 @@
 ;; Markdown section
 (use-package! markdown-mode
   :config
-  ;; Create pretty symbols for markdown headings
-  (add-hook! markdown-mode
-    (font-lock-add-keywords
-     nil
-     '(("^\\(#\\) " 1 '(face nil display "◉ "))
-       ("^\\(##\\) " 1 '(face nil display "○ "))
-       ("^\\(###\\) " 1 '(face nil display "✸ "))
-       ("^\\(####\\) " 1 '(face nil display "✿ "))
-       ("^\\(#####\\) " 1 '(face nil display "⚘ "))
-       ("^\\(######\\) " 1 '(face nil display "❀ ")))))
+  (setq markdown-hide-markup t
+        markdown-fontify-code-blocks-natively t
+        markdown-header-scaling t
+        markdown-make-gfm-checkboxes-buttons t))
 
-;; Set variable heights for markdown headings
-(custom-set-faces!
-  '(markdown-header-face-1 :height 1.8 :weight bold)
-  '(markdown-header-face-2 :height 1.6 :weight bold)
-  '(markdown-header-face-3 :height 1.4 :weight bold)
-  '(markdown-header-face-4 :height 1.2 :weight bold)
-  '(markdown-header-face-5 :height 1.1 :weight bold)
-  '(markdown-header-face-6 :height 1.0 :weight bold))
+  (setq-local markdown-hide-markup t)
 
-;; Enable pretty symbols for various markdown elements
-  (setq markdown-hide-markup t)
-  (setq markdown-fontify-code-blocks-natively t)
-  (setq markdown-header-scaling t)
-
-  ;; Make checkboxes interactive like in org-mode
-  (setq markdown-make-gfm-checkboxes-buttons t)
-
-  ;; Enable math rendering if using +grip flag
-  (setq markdown-enable-math t)
-
-  ;; Enable wiki links
-  (setq markdown-enable-wiki-links t))
-
-;; Ensure code blocks get proper syntax highlighting
+;; CLEAN APPROACH: One direct configuration for both style and symbols
 (after! markdown-mode
-  (set-face-attribute 'markdown-code-face nil
-                     :background (doom-color 'bg-alt)
-                     :extend t))
+  ;; Set header faces with colored backgrounds
+
+  (custom-set-faces!
+   '(markdown-header-face-1 :height 1.8 :weight bold :foreground "#A3BE8C" :background "#E8F0E6")
+   '(markdown-header-face-2 :height 1.6 :weight bold :foreground "#EBCB8B" :background "#F7F1E6")
+   '(markdown-header-face-3 :height 1.4 :weight bold :foreground "#D08770" :background "#F5E8E2")
+   '(markdown-header-face-4 :height 1.2 :weight bold :foreground "#BF616A" :background "#F2E3E4")
+   '(markdown-header-face-5 :height 1.1 :weight bold :foreground "#B48EAD" :background "#EFE5EF")
+   '(markdown-header-face-6 :height 1.0 :weight bold :foreground "#8FBCBB" :background "#E5EEEE"))
+
+  ;; Direct setup for header symbols
+  (font-lock-add-keywords
+   'markdown-mode
+   '(("^\\(#\\) " 1 '(face nil display "◉ "))
+     ("^\\(##\\) " 1 '(face nil display "○ "))
+     ("^\\(###\\) " 1 '(face nil display "✸ "))
+     ("^\\(####\\) " 1 '(face nil display "✿ "))
+     ("^\\(#####\\) " 1 '(face nil display "⚘ "))
+     ("^\\(######\\) " 1 '(face nil display "❀ ")))
+   t))
+
+  ;; Add symbol replacements for markdown list markers
+  (font-lock-add-keywords
+   'markdown-mode
+   '(("^\\(\\s-*\\)\\(-\\) " 2 '(face nil display "➤"))     ;; Replace "-" with "➤"
+     ("^\\(\\s-*\\)\\(\\+\\) " 2 '(face nil display "●"))    ;; Replace "+" with "◆"
+     ("^\\(\\s-*\\)\\(\\*\\) " 2 '(face nil display "✦"))    ;; Replace "*" with "✦"
+     ;; For nested lists (with spaces/tabs before the marker)
+     ("^\\(\\s-+\\)\\(-\\) " 2 '(face nil display "▹"))     ;; Nested "-" becomes "▹"
+     ("^\\(\\s-+\\)\\(\\+\\) " 2 '(face nil display "◉"))    ;; Nested "+" becomes "◈"
+     ("^\\(\\s-+\\)\\(\\*\\) " 2 '(face nil display "✧")))   ;; Nested "*" becomes "✧"
+   t)
+
+  (font-lock-add-keywords
+   'markdown-mode
+   '(("\\(\\[ \\]\\)" 1 '(face nil display "☐"))   ;; Unchecked box
+     ("\\(\\[x\\]\\)" 1 '(face nil display "☑"))    ;; Checked box
+     ("\\(\\[X\\]\\)" 1 '(face nil display "☑")))   ;; Checked box (capital X)
+   t)
+
+(use-package! denote
+  :config
+  ;; Set the location of your notes directory
+  (setq denote-directory (expand-file-name "~/notes/"))
+
+  ;; Optional settings
+  (setq denote-known-keywords '("emacs" "programming" "notes" "research"))
+  (setq denote-file-type 'markdown-yaml) ;; Options: 'markdown-yaml (default), 'markdown, 'org, 'text
+
+  ;; Use human readable dates in filenames
+  (setq denote-date-format nil) ;; Default is ISO format date
+
+  ;; Integrate with Dired if you want
+  (add-hook 'dired-mode-hook #'denote-dired-mode))
+
+(map! :leader
+      (:prefix ("m" . "notes")
+       :desc "Create new note" "n" #'denote-create-note
+       :desc "Open random note" "r" #'denote-open-random-note
+       :desc "Find note by keyword" "k" #'denote-find-notes-by-keyword
+       :desc "Find notes by regex" "s" #'denote-find-notes-by-regex
+       :desc "Link to note" "l" #'denote-link))

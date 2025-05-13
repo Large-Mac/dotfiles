@@ -26,6 +26,7 @@
     nerd-fonts.jetbrains-mono
     nerd-fonts.symbols-only
     iosevka-comfy.comfy-wide
+    # aporetic # (commented out until it gets added into packages)
     # Cartograph CF
 
     # WM programs
