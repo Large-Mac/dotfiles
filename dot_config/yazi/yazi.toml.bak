@@ -1,0 +1,13 @@
+[opener]
+edit = [
+    { run = "nvim" }
+]
+
+[opener.rules]
+file = [
+    { mime = "text/*", use = "edit" },
+    { mime = "*", use = "open" }
+]
+directory = [
+    { use = "open_dir" }
+]

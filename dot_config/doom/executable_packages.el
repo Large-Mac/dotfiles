@@ -50,6 +50,7 @@
 ;; (unpin! t)
 
 (package! tao-theme)
+(package! acme-theme)
 
 (package! denote)
 

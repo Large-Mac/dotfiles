@@ -49,7 +49,7 @@
        (vc-gutter +pretty) ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        ;;window-select     ; visually switch windows
-       workspaces        ; tab emulation, persistence & separate workspaces
+       ;;workspaces        ; tab emulation, persistence & separate workspaces
        ;;zen               ; distraction-free coding or writing
 
        :editor
@@ -156,18 +156,20 @@
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
-       ;;(org +roam2
+       (org
+       ;; +roam2
        ;;     +brain
        ;;     +babel
-       ;;     +dragndrop
+       +dragndrop
        ;;     +journal
-       ;;     +pandoc
+       +pandoc
        ;;     +pomodoro
-       ;;     +export
-       ;;     +capture
+       +export
+       +capture
        ;;     +agenda
-       ;;     +pretty
-       ;;     +persent)               ; organize your plain life in plain text
+       +pretty
+       ;;     +persent
+       )               ; organize your plain life in plain text
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;graphviz          ; diagrams for confusing yourself even more

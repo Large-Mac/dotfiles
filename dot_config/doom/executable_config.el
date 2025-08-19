@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'modus-operandi)
+(setq doom-theme 'acme)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -169,13 +169,13 @@
 (after! markdown-mode
   ;; Set header faces with colored backgrounds
 
-  (custom-set-faces!
-   '(markdown-header-face-1 :height 1.8 :weight bold :foreground "#A3BE8C" :background "#E8F0E6")
-   '(markdown-header-face-2 :height 1.6 :weight bold :foreground "#EBCB8B" :background "#F7F1E6")
-   '(markdown-header-face-3 :height 1.4 :weight bold :foreground "#D08770" :background "#F5E8E2")
-   '(markdown-header-face-4 :height 1.2 :weight bold :foreground "#BF616A" :background "#F2E3E4")
-   '(markdown-header-face-5 :height 1.1 :weight bold :foreground "#B48EAD" :background "#EFE5EF")
-   '(markdown-header-face-6 :height 1.0 :weight bold :foreground "#8FBCBB" :background "#E5EEEE"))
+(custom-set-faces!
+ '(markdown-header-face-1 :height 1.8 :weight bold :foreground "#2E5266" :background "#F8FAFB")
+ '(markdown-header-face-2 :height 1.6 :weight bold :foreground "#8B4513" :background "#FDF9F5")
+ '(markdown-header-face-3 :height 1.4 :weight bold :foreground "#556B2F" :background "#F7F9F4")
+ '(markdown-header-face-4 :height 1.2 :weight bold :foreground "#8B0000" :background "#FDF6F6")
+ '(markdown-header-face-5 :height 1.1 :weight bold :foreground "#483D8B" :background "#F6F6FD")
+ '(markdown-header-face-6 :height 1.0 :weight bold :foreground "#2F4F4F" :background "#F6F8F8"))
 
   ;; Direct setup for header symbols
   (font-lock-add-keywords
@@ -223,9 +223,13 @@
   (add-hook 'dired-mode-hook #'denote-dired-mode))
 
 (map! :leader
-      (:prefix ("m" . "notes")
-       :desc "Create new note" "n" #'denote-create-note
-       :desc "Open random note" "r" #'denote-open-random-note
-       :desc "Find note by keyword" "k" #'denote-find-notes-by-keyword
-       :desc "Find notes by regex" "s" #'denote-find-notes-by-regex
-       :desc "Link to note" "l" #'denote-link))
+      :prefix ("n d" . "denote")
+      :desc "Create new note" "n" #'denote
+      :desc "Create note with specific type" "t" #'denote-type
+      :desc "Create note with date" "d" #'denote-date
+      :desc "Find note" "f" #'denote-open-or-create
+      :desc "Insert link" "l" #'denote-link
+      :desc "Backlinks" "b" #'denote-backlinks
+      :desc "Add keywords" "k" #'denote-keywords-add
+      :desc "Remove keywords" "K" #'denote-keywords-remove
+      :desc "Rename file" "r" #'denote-rename-file)

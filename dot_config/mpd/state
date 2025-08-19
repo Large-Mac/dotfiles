@@ -1,16 +1,16 @@
-sw_volume: 36
+sw_volume: 46
 audio_device_state:1:PipeWire Sound Server
 state: pause
 current: 0
-time: 141.79
+time: 13.274000000000001
 random: 0
 repeat: 1
 single: 0
 consume: 0
-crossfade: 0
+crossfade: 5
 mixrampdb: 0
 mixrampdelay: -1
 lastloadedplaylist: 
 playlist_begin
-0:Playlists/Anime/【Yowamushi Pedal】 Love ☆ Hime ｢eng + romaji sub｣.opus
+0:Playlists/80's/I'm Free (Heaven Helps the Man) (From ＂Footloose＂ Soundtrack).opus
 playlist_end
